@@ -1,47 +1,72 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <div class="q-pa-md row items-start q-gutter-md">
+    <q-card class="my-card">
+      <q-card-section>
+        {{ lorem }}
+      </q-card-section>
+    </q-card>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
+    <q-card
+      class="my-card text-white"
+      style="background: radial-gradient(circle, #35a2ff 0%, #014a88 100%)"
+    >
+      <q-card-section>
+        <div class="text-h6">Our Changing Planet</div>
+        <div class="text-subtitle2">by John Doe</div>
+      </q-card-section>
 
-  <main>
-    <TheWelcome />
-  </main>
+      <q-card-section class="q-pt-none">
+        {{ lorem }}
+      </q-card-section>
+    </q-card>
+
+    <q-card dark bordered class="bg-grey-9 my-card">
+      <q-card-section>
+        <div class="text-h6">Our Changing Planet</div>
+        <div class="text-subtitle2">by John Doe</div>
+      </q-card-section>
+
+      <q-separator dark inset />
+
+      <q-card-section>
+        {{ lorem }}
+      </q-card-section>
+    </q-card>
+
+    <q-card flat bordered class="my-card">
+      <q-card-section>
+        <div class="text-h6">Our Changing Planet</div>
+      </q-card-section>
+
+      <q-card-section class="q-pt-none">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </q-card-section>
+
+      <q-separator inset />
+
+      <q-card-section>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </q-card-section>
+    </q-card>
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
+<script>
+export default {
+  setup() {
+    return {
+      lorem:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    };
+  },
+};
+</script>
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+<style lang="scss" scoped>
+.my-card {
+  width: 100%;
+  max-width: 250px;
 }
 </style>
