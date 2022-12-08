@@ -13,8 +13,6 @@ import "@quasar/extras/animate/fadeOut.css";
 // Quasar 的整包 CSS，這要引入，不然幹嘛用 Quasar XDD
 import "quasar/src/css/index.sass";
 
-import "@/assets/main.css";
-
 const app = createApp(App);
 
 app.use(Quasar, {
