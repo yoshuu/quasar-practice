@@ -13,10 +13,17 @@ import "@quasar/extras/animate/fadeOut.css";
 // Quasar 的整包 CSS，這要引入，不然幹嘛用 Quasar XDD
 import "quasar/src/css/index.sass";
 
+import langTW from "quasar/lang/zh-TW";
+
 const app = createApp(App);
 
 app.use(Quasar, {
   plugins: {},
+  lang: langTW,
+});
+
+app.use(Quasar, {
+  lang: langTW,
 });
 
 app.mount("#app");

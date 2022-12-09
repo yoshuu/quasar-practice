@@ -1,7 +1,7 @@
 <script setup>
-import TableA from "./components/TableA.vue";
+import Apple from "./components/Apple.vue";
 </script>
 <template>
-  <TableA></TableA>
+  <Apple />
 </template>
 <style scoped></style>
