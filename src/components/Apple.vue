@@ -26,12 +26,27 @@
       </button>
     </div>
     <div class="clinic-list-body">
-      <q-table :rows="rows" :columns="columns" row-key="name"> </q-table>
+      <q-table :rows="rows" :columns="columns" row-key="name">
+        <template v-slot:top-right>
+          <q-input
+            class="apple"
+            borderless
+            dense
+            debounce="300"
+            v-model="filter"
+            placeholder="Search"
+          >
+            <template v-slot:append>
+              <q-icon name="search" />
+            </template>
+          </q-input> </template
+      ></q-table>
     </div>
   </div>
 </template>
 
 <script setup>
+import { ref } from "vue";
 const columns = [
   { name: "a", label: "#", field: "a" },
   { name: "b", label: "預約看診日期", field: "b" },
@@ -502,6 +517,15 @@ const rows = [
 </script>
 
 <style lang="scss">
+.apple {
+  position: absolute;
+  top: -45px;
+  right: 0px;
+  input {
+    border: 2px solid #000;
+  }
+}
+
 .clinic-list .q-table tbody > tr {
   &:nth-child(odd) {
     background-color: #f2f2f2;
