@@ -1,30 +1,17 @@
-<script setup></script>
 <template>
-  <div class="q-pa-md q-gutter-sm">
-    <q-banner class="bg-primary text-white">
-      Unfortunately, the credit card did not go through, please try again.
-      <template v-slot:action>
-        <q-btn flat color="white" label="Dismiss" />
-        <q-btn flat color="white" label="Update Credit Card" />
-      </template>
-    </q-banner>
+  <div class="appointment-form column q-col-gutter-sm">
+    <q-btn>新增家庭成員</q-btn>
+    <div>查詢對象：</div>
+    <Select
+      :modelValue="null"
+      :options="['本人-王大中', '家屬-王小明']"
+      style="padding-bottom: 30px"
+    />
 
-    <q-banner class="bg-grey-3">
-      <template v-slot:avatar>
-        <q-icon name="signal_wifi_off" color="primary" />
-      </template>
-      You have lost connection to the internet. This app is offline.
-      <template v-slot:action>
-        <q-btn flat color="primary" label="Turn on Wifi" />
-      </template>
-    </q-banner>
-
-    <q-banner inline-actions class="text-white bg-red">
-      You have lost connection to the internet. This app is offline.
-      <template v-slot:action>
-        <q-btn flat color="white" label="Turn ON Wifi" />
-      </template>
-    </q-banner>
+    <q-btn label="查詢" color="secondary" />
   </div>
 </template>
-<style scoped></style>
+
+<script setup></script>
+
+<style lang="scss" scoped></style>
